@@ -1,11 +1,11 @@
 {
-    "name": "cloverly/cloverly",
+    "name": "ezeespace/cloverly",
     "description": "PHP SDK for Cloverly API",
     "keywords": [
         "Cloverly",
         "cloverly"
     ],
-    "homepage": "https://github.com/cloverly/cloverly",
+    "homepage": "https://github.com/ezeespace/cloverly",
     "license": "MIT",
     "authors": [
         {

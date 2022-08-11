@@ -20,6 +20,6 @@ class API
 
         $request = $connector->request(new CalculateFlightTravelRequest($airportCodes, $projectMatch, $note, $tags));
 
-        $response = $request->send();
+        return $request->send()->dto();
     }
 }

@@ -24,7 +24,6 @@ class CalculateFlightTravelRequest extends SaloonRequest
     {
     }
 
-
     public function defineEndpoint(): string
     {
         return '/estimates/flight';

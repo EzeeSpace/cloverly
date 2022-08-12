@@ -7,6 +7,7 @@ use Cloverly\Cloverly\Responses\TransactionResponse;
 use Cloverly\Cloverly\Support\ProjectMatch;
 use Cloverly\Cloverly\Support\Transaction;
 use RuntimeException;
+use Sammyjo20\Saloon\Constants\Saloon;
 use Sammyjo20\Saloon\Http\SaloonRequest;
 use Sammyjo20\Saloon\Http\SaloonResponse;
 use Sammyjo20\Saloon\Traits\Plugins\CastsToDto;
@@ -19,7 +20,7 @@ class CalculateFlightTravelRequest extends SaloonRequest
 
     protected ?string $connector = CloveryAPIConnector::class;
 
-    protected ?string $method = 'POST';
+    protected ?string $method = Saloon::POST;
 
     public function __construct(public array $airportCodes, public ?ProjectMatch $projectMatch = null, public ?string $note = "", public array $tags = [], public string $transaction = 'estimates')
     {
@@ -49,7 +50,7 @@ class CalculateFlightTravelRequest extends SaloonRequest
             $data['project_match'] = $this->projectMatch->getData();
         }
 
-        if ($this->note) {
+        if (! blank($this->note)) {
             $data['note'] = $this->note;
         }
 

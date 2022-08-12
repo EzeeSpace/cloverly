@@ -18,7 +18,7 @@ class EstimateResponse
 
         return new Transaction(
             Arr::get($data, 'transaction_id'),
-            Arr::get($data, 'estimate'),
+            Arr::get($data, 'transaction_state'),
             Arr::get($data, 'environment'),
             Arr::get($data, 'total_co2e_in_kg'),
             Arr::get($data, 'total_micro_units'),

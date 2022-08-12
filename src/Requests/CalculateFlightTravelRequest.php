@@ -21,13 +21,13 @@ class CalculateFlightTravelRequest extends SaloonRequest
 
     protected ?string $method = 'POST';
 
-    public function __construct(public array $airportCodes, public ?ProjectMatch $projectMatch = null, public ?string $note = "", public array $tags = [])
+    public function __construct(public array $airportCodes, public ?ProjectMatch $projectMatch = null, public ?string $note = "", public array $tags = [], public string $transaction = 'estimates')
     {
     }
 
     public function defineEndpoint(): string
     {
-        return '/estimates/flight';
+        return "/$this->transaction/flight";
     }
 
     protected function castToDto(SaloonResponse $response): Transaction

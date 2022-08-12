@@ -3,7 +3,7 @@
 namespace Cloverly\Cloverly\Requests;
 
 use Cloverly\Cloverly\Connector\CloveryAPIConnector;
-use Cloverly\Cloverly\Responses\EstimateResponse;
+use Cloverly\Cloverly\Responses\TransactionResponse;
 use Cloverly\Cloverly\Support\ProjectMatch;
 use Cloverly\Cloverly\Support\Transaction;
 use RuntimeException;
@@ -32,7 +32,7 @@ class CalculateFlightTravelRequest extends SaloonRequest
 
     protected function castToDto(SaloonResponse $response): Transaction
     {
-        return EstimateResponse::fromSaloonResponse($response);
+        return TransactionResponse::fromSaloonResponse($response);
     }
 
     public function defaultData(): array

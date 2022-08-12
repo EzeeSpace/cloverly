@@ -6,7 +6,7 @@ use Cloverly\Cloverly\Support\Transaction;
 use Illuminate\Support\Arr;
 use Sammyjo20\Saloon\Http\SaloonResponse;
 
-class EstimateResponse
+class TransactionResponse
 {
     public function __construct()
     {

@@ -35,24 +35,28 @@ class CalculateFlightTravelRequest extends SaloonRequest
         return EstimateResponse::fromSaloonResponse($response);
     }
 
-    public function boot(SaloonRequest $request): void
+    public function defaultData(): array
     {
+        $data = [];
+
         if (count($this->airportCodes) < 2) {
             throw new RuntimeException('You must provide at least 2 airport codes');
         }
 
-        $this->addData('airports', $this->airportCodes);
+        $data['airports'] = $this->airportCodes;
 
         if ($this->projectMatch) {
-            $this->addData('project_match', $this->projectMatch->getData());
+            $data['project_match'] = $this->projectMatch->getData();
         }
 
         if ($this->note) {
-            $this->addData('note', $this->note);
+            $data['note'] = $this->note;
         }
 
         if (count($this->tags) > 0) {
-            $this->addData('tags', $this->tags);
+            $data['tags'] = $this->tags;
         }
+
+        return $data;
     }
 }

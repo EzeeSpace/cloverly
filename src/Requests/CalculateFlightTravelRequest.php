@@ -35,7 +35,7 @@ class CalculateFlightTravelRequest extends SaloonRequest
         return EstimateResponse::fromSaloonResponse($response);
     }
 
-    public function defaultData(): array
+    public function boot(SaloonRequest $request): void
     {
         if (count($this->airportCodes) < 2) {
             throw new RuntimeException('You must provide at least 2 airport codes');

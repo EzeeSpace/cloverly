@@ -8,7 +8,7 @@ use Cloverly\Cloverly\Support\ProjectMatch;
 
 class API
 {
-    public function __construct(public string $token)
+    public function __construct(public string $token, public bool $debug = false)
     {
     }
 
@@ -17,6 +17,8 @@ class API
         $connector = new CloveryAPIConnector();
 
         $connector->withTokenAuth($this->token);
+
+        $connector->addConfig('debug', $this->debug);
 
         $request = $connector->request(new CalculateFlightTravelRequest($airportCodes, $projectMatch, $note, $tags));
 

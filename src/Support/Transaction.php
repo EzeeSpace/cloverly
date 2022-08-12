@@ -4,7 +4,7 @@ namespace Cloverly\Cloverly\Support;
 
 use Illuminate\Support\Arr;
 
-class Estimate
+class Transaction
 {
     private string $transactionId;
     private string $transactionState;

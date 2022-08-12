@@ -2,7 +2,7 @@
 
 namespace Cloverly\Cloverly\Responses;
 
-use Cloverly\Cloverly\Support\Estimate;
+use Cloverly\Cloverly\Support\Transaction;
 use Illuminate\Support\Arr;
 use Sammyjo20\Saloon\Http\SaloonResponse;
 
@@ -12,11 +12,11 @@ class EstimateResponse
     {
     }
 
-    public static function fromSaloonResponse(SaloonResponse $response): Estimate
+    public static function fromSaloonResponse(SaloonResponse $response): Transaction
     {
         $data = $response->json();
 
-        return new Estimate(
+        return new Transaction(
             Arr::get($data, 'transaction_id'),
             Arr::get($data, 'estimate'),
             Arr::get($data, 'environment'),

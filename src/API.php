@@ -4,6 +4,7 @@ namespace Cloverly\Cloverly;
 
 use Cloverly\Cloverly\Connector\CloveryAPIConnector;
 use Cloverly\Cloverly\Requests\CalculateFlightTravelRequest;
+use Cloverly\Cloverly\Requests\GetProjectsRequest;
 use Cloverly\Cloverly\Support\ProjectMatch;
 use GuzzleHttp\Exception\GuzzleException;
 use ReflectionException;
@@ -55,7 +56,24 @@ class API
         return $this->processResponse($request->send());
     }
 
+    /**
+     * @throws ReflectionException
+     * @throws GuzzleException
+     * @throws SaloonRequestException
+     * @throws SaloonException
+     */
+    public function listProjects()
+    {
+        $connector = new CloveryAPIConnector();
 
+        $connector->withTokenAuth($this->token);
+
+        $connector->addConfig('debug', $this->debug);
+
+        $request = $connector->request(new GetProjectsRequest());
+
+        return $this->processResponse($request->send());
+    }
 
     /**
      * @throws SaloonRequestException

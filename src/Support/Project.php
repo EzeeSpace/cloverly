@@ -28,6 +28,7 @@ class Project
         public ?string $removal_time_period = "",
         public bool $limitations = false,
         public ?string $offset_classification = "",
+        public ?array $unitedNationsSustainableDevelopmentGoals = []
     ) {
     }
 
@@ -213,5 +214,13 @@ class Project
     public function getOffsetClassification(): ?string
     {
         return $this->offset_classification;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getUnitedNationsSustainableDevelopmentGoals(): ?array
+    {
+        return $this->unitedNationsSustainableDevelopmentGoals;
     }
 }

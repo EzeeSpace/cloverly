@@ -41,6 +41,7 @@ class ProjectsResponse
                 Arr::get($project, 'removal_time_period'),
                 Arr::get($project, 'limitations'),
                 Arr::get($project, 'offset_classification'),
+                Arr::get($project, 'unsdg'),
             );
         }
 

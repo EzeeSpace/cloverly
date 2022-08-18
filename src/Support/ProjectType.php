@@ -4,8 +4,15 @@ namespace Cloverly\Cloverly\Support;
 
 class ProjectType
 {
-    public function __construct(public ?string $type_id, public ?string $name, public ?string $description)
+    private ?string $type_id;
+    private ?string $name;
+    private ?string $description;
+
+    public function __construct(?string $type_id, ?string $name, ?string $description)
     {
+        $this->type_id = $type_id;
+        $this->name = $name;
+        $this->description = $description;
     }
 
     /**

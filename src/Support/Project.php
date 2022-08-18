@@ -13,7 +13,21 @@ class Project
         public string $country,
         public string $registry_serial_number_range,
         public string $registry_link,
-        public string $project_url
+        public string $project_url,
+        public string $registry_name = "",
+        public array $location = [],
+        public int $available_carbon_in_kg = 0,
+        public float $cost_per_kg_carbon_in_usd_cents = 0,
+        public float $kwh_of_electricity_per_unit = 0,
+        public array $image_list = [],
+        public bool $is_featured = false,
+        public string $short_name = "",
+        public string $short_description = "",
+        public string $long_description = "",
+        public string $registry_project_id = "",
+        public string $removal_time_period = "",
+        public bool $limitations = false,
+        public string $offset_classification = "",
     ) {
     }
 

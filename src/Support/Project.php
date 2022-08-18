@@ -11,7 +11,7 @@ class Project
         public string $city,
         public string $state,
         public string $country,
-        public string $registry_serial_number_range,
+        public ?string $registry_serial_number_range,
         public string $registry_link,
         public string $project_url,
         public string $registry_name = "",

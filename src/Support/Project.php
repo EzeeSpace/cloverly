@@ -21,13 +21,13 @@ class Project
         public ?float $kwh_of_electricity_per_unit = 0,
         public array $image_list = [],
         public bool $is_featured = false,
-        public string $short_name = "",
+        public ?string $short_name = "",
         public string $short_description = "",
         public string $long_description = "",
         public string $registry_project_id = "",
-        public string $removal_time_period = "",
+        public ?string $removal_time_period = "",
         public bool $limitations = false,
-        public string $offset_classification = "",
+        public ?string $offset_classification = "",
     ) {
     }
 
@@ -101,5 +101,117 @@ class Project
     public function getProjectUrl(): string
     {
         return $this->project_url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegistryName(): string
+    {
+        return $this->registry_name;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLocation(): array
+    {
+        return $this->location;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAvailableCarbonInKg(): int
+    {
+        return $this->available_carbon_in_kg;
+    }
+
+    /**
+     * @return float|int|null
+     */
+    public function getCostPerKgCarbonInUsdCents(): float|int|null
+    {
+        return $this->cost_per_kg_carbon_in_usd_cents;
+    }
+
+    /**
+     * @return float|int|null
+     */
+    public function getKwhOfElectricityPerUnit(): float|int|null
+    {
+        return $this->kwh_of_electricity_per_unit;
+    }
+
+    /**
+     * @return array
+     */
+    public function getImageList(): array
+    {
+        return $this->image_list;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isIsFeatured(): bool
+    {
+        return $this->is_featured;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getShortName(): ?string
+    {
+        return $this->short_name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortDescription(): string
+    {
+        return $this->short_description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLongDescription(): string
+    {
+        return $this->long_description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegistryProjectId(): string
+    {
+        return $this->registry_project_id;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRemovalTimePeriod(): ?string
+    {
+        return $this->removal_time_period;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isLimitations(): bool
+    {
+        return $this->limitations;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getOffsetClassification(): ?string
+    {
+        return $this->offset_classification;
     }
 }

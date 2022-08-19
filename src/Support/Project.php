@@ -131,9 +131,9 @@ class Project
     }
 
     /**
-     * @return string
+     * @return ?string
      */
-    public function getRegistrySerialNumberRange(): string
+    public function getRegistrySerialNumberRange(): ?string
     {
         return $this->registry_serial_number_range;
     }

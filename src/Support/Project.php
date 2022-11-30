@@ -16,7 +16,7 @@ class Project
     private string $project_url;
     private string $registry_name;
     private array $location;
-    private int|float $available_carbon_in_kg;
+    private int|float|null $available_carbon_in_kg;
     private int|null|float $cost_per_kg_carbon_in_usd_cents;
     private int|null|float $kwh_of_electricity_per_unit;
     private array $image_list;

@@ -171,9 +171,9 @@ class Project
     }
 
     /**
-     * @return int
+     * @return ?int
      */
-    public function getAvailableCarbonInKg(): int
+    public function getAvailableCarbonInKg(): ?int
     {
         return $this->available_carbon_in_kg;
     }

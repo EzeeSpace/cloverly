@@ -42,7 +42,7 @@ class Project
         string $project_url,
         string $registry_name = "",
         array $location = [],
-        float $available_carbon_in_kg = 0,
+        ?float $available_carbon_in_kg = 0,
         ?float $cost_per_kg_carbon_in_usd_cents = 0,
         ?float $kwh_of_electricity_per_unit = 0,
         array $image_list = [],

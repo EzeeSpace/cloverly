@@ -171,9 +171,9 @@ class Project
     }
 
     /**
-     * @return ?int
+     * @return float|int|null
      */
-    public function getAvailableCarbonInKg(): ?int
+    public function getAvailableCarbonInKg(): float|int|null
     {
         return $this->available_carbon_in_kg;
     }
